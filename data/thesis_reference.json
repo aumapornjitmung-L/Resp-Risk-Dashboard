@@ -1,0 +1,43 @@
+{
+  "_note": "ค่าอ้างอิงจากสไลด์/ผลการรันในวิทยานิพนธ์ ใช้แสดงเมื่อยังไม่ได้นำเข้าข้อมูล และใช้เทียบกับผลที่คำนวณใหม่ ลบไฟล์นี้ได้ แอปจะทำงานต่อโดยไม่แสดงส่วนอ้างอิง",
+  "dataset": {
+    "records": 2772, "provinces": 77, "months": 36, "period": "พ.ศ. 2566–2568",
+    "risk_counts": {"Low (L)": 2567, "Moderate (M)": 73, "High (H)": 32, "Extremely (E)": 100},
+    "train": 2217, "test": 555,
+    "test_counts": {"Low (L)": 514, "Moderate (M)": 15, "High (H)": 6, "Extremely (E)": 20}
+  },
+  "quality": {
+    "rs_raw_rows": 218243, "rs_duplicates": 16862, "rs_missing_province": 96, "rs_clean_rows": 201285,
+    "pm_missing_before": 5868, "merged_rows": 84392, "pm_rows_filled": 10715, "pm_filled_pct": 12.7,
+    "pm_provinces_missing": ["พังงา", "ระนอง", "เพชรบุรี"],
+    "weather_no_station": ["ตราด", "นครปฐม", "นนทบุรี", "สมุทรสาคร", "สระบุรี", "สิงห์บุรี", "อ่างทอง"]
+  },
+  "metrics": {
+    "Random Forest": {"Accuracy": 0.9586, "Precision (Macro)": 0.7889, "Recall (Macro)": 0.7498, "F1-Score (Macro)": 0.7669, "AUC (Macro OVR)": 0.9737},
+    "XGBoost": {"Accuracy": 0.9604, "Precision (Macro)": 0.7826, "Recall (Macro)": 0.7544, "F1-Score (Macro)": 0.7646, "AUC (Macro OVR)": 0.9618},
+    "SVM": {"Accuracy": 0.7874, "Precision (Macro)": 0.416, "Recall (Macro)": 0.7521, "F1-Score (Macro)": 0.4743, "AUC (Macro OVR)": 0.9572},
+    "Logistic Regression": {"Accuracy": 0.6324, "Precision (Macro)": 0.3603, "Recall (Macro)": 0.7233, "F1-Score (Macro)": 0.3816, "AUC (Macro OVR)": 0.8497}
+  },
+  "selected_rf": {"F1-Score (Macro)": 0.7597, "n_features": 12},
+  "per_class": {
+    "Random Forest": {"Low (L)": [0.97, 0.98, 0.98, 0.964], "Moderate (M)": [0.45, 0.33, 0.38, 0.943], "High (H)": [0.83, 0.83, 0.83, 0.994], "Extremely (E)": [0.89, 0.85, 0.87, 0.994]},
+    "XGBoost": {"Low (L)": [0.97, 0.98, 0.98, 0.953], "Moderate (M)": [0.50, 0.40, 0.44, 0.902], "High (H)": [0.71, 0.83, 0.77, 0.998], "Extremely (E)": [0.94, 0.80, 0.86, 0.993]},
+    "SVM": {"Low (L)": [0.99, 0.79, 0.88, 0.941], "Moderate (M)": [0.11, 0.53, 0.18, 0.910], "High (H)": [0.21, 0.83, 0.33, 0.992], "Extremely (E)": [0.35, 0.85, 0.50, 0.986]},
+    "Logistic Regression": {"Low (L)": [0.98, 0.63, 0.76, 0.801], "Moderate (M)": [0.07, 0.47, 0.11, 0.758], "High (H)": [0.22, 1.00, 0.36, 0.989], "Extremely (E)": [0.17, 0.80, 0.28, 0.851]}
+  },
+  "confusion": {
+    "Random Forest": [[505, 6, 1, 2], [10, 5, 0, 0], [1, 0, 5, 0], [3, 0, 0, 17]],
+    "XGBoost": [[506, 6, 1, 1], [8, 6, 1, 0], [1, 0, 5, 0], [4, 0, 0, 16]],
+    "SVM": [[407, 64, 13, 30], [3, 8, 4, 0], [0, 0, 5, 1], [1, 0, 2, 17]],
+    "Logistic Regression": [[322, 100, 15, 77], [4, 7, 4, 0], [0, 0, 6, 0], [2, 0, 2, 16]]
+  },
+  "season": {"Summer": [32.0, 75.6], "Winter": [24.7, 81.1], "Rainy": [12.2, 65.1]},
+  "region": {
+    "North": [27.8, 19.9], "Northeast": [22.6, 43.9], "Central": [24.6, 218.2],
+    "East": [19.5, 46.3], "South-East-Coast": [14.2, 8.9], "South-West-Coast": [13.2, 4.7]
+  },
+  "july_2024": {"pm25_mean": 11.5, "cases_mean": 181.9, "cases_total": 14010, "top_province": "กรุงเทพมหานคร", "top_cases": 12851},
+  "pearson": {"PM25_mean": 0.018, "PM25_max": 0.016, "Temp_mean": 0.059, "Humidity_mean": -0.022, "Pressure_mean": 0.060, "Rainfall_sum": 0.006, "AQI_mean": 0.031},
+  "anova": {"F": 245.25, "eta2": 0.014},
+  "vif": {"PM2.5": 1.34, "Temp": 1.07, "Humidity": 1.50, "Pressure": 1.09, "Rainfall": 1.10, "WindSpeed": 1.15}
+}
