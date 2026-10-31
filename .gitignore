@@ -1,0 +1,14 @@
+# ข้อมูลวิจัยและไฟล์ขนาดใหญ่ ห้ามอัปโหลดขึ้น GitLab
+*.xlsx
+*.xls
+*.csv
+*.pkl
+*.parquet
+!tests/fixtures/*.csv
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.streamlit/secrets.toml
